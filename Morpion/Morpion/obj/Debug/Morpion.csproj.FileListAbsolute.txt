@@ -1,0 +1,6 @@
+C:\Users\btssio\Desktop\Morpion\Morpion\Morpion\bin\Debug\Morpion.exe.config
+C:\Users\btssio\Desktop\Morpion\Morpion\Morpion\bin\Debug\Morpion.exe
+C:\Users\btssio\Desktop\Morpion\Morpion\Morpion\bin\Debug\Morpion.pdb
+C:\Users\btssio\Desktop\Morpion\Morpion\Morpion\obj\Debug\Morpion.csprojResolveAssemblyReference.cache
+C:\Users\btssio\Desktop\Morpion\Morpion\Morpion\obj\Debug\Morpion.exe
+C:\Users\btssio\Desktop\Morpion\Morpion\Morpion\obj\Debug\Morpion.pdb
