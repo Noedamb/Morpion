@@ -6,11 +6,24 @@ namespace Morpion
     class Program
     {
         public static int[,] grille = new int[3, 3]; // matrice pour stocker les coups joués
-
+        string[,] grilleString = {{"1","2","3"},{"4","5","6"},{"7","8","9"}};
+        
         // Fonction permettant l'affichage du Morpion
         public static void AfficherMorpion(int j, int k)
         {
             // A compléter 
+            for (var j = 0; j < grille.GetLength(0); j++)
+            {
+                Console.Write("\n|====|====|====|\n");
+                Console.Write("|");
+                for (var i = 0; i < grille.GetLength(1); i++)
+                {
+                    Console.Write(" -- ");
+                    Console.Write("|");
+                }
+                
+            }
+            Console.Write("\n|====|====|====|");
         }
 
         // Fonction permettant de changer
