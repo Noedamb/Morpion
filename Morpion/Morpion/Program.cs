@@ -8,15 +8,13 @@ namespace Morpion
         public static int[,] grille = new int[3, 3]; // matrice pour stocker les coups joués
 
         // Fonction permettant l'affichage du Morpion
-        
-        public static void AfficherMorpion(int j, int k)
+        public static void AfficherMorpion() // (int j, int k)
         {
-        	
             for (var row = 0; row  < grille.GetLength(0); row++) 
             {
                 Console.Write("\n|====|====|====|\n");
                 Console.Write("|");
-                
+                //2eme dimension
                 for (var col = 0; col < grille.GetLength(1); col++)
                 {
                     Console.Write(" -- ");
@@ -26,36 +24,28 @@ namespace Morpion
             Console.Write("\n|====|====|====|\n");
         }
         
-        // Fonction permettant de changer
-        // dans le tableau qu'elle est le 
-        // joueur qui à jouer
-        // Bien vérifier que le joueur ne sort
-        // pas du tableau et que la position
-        // n'est pas déjà jouée
+	        /* Fonction permettant de changer dans le tableau qu'elle est le joueur qui à jouer
+	        Bien vérifier que le joueur ne sortpas du tableau et que la position n'est pas déjà jouée */
         public static bool AJouer(int j, int k, int joueur)
         {		
-        	// j = row et k = col 
-        	if (j < 0 | j >= grille.GetLength(0) | k < 0 | k >= grille.GetLength(1))
+        	if (j < 0 | j >= grille.GetLength(0) | k < 0 | k >= grille.GetLength(1)) // j = row && k = col 
             {
                 Console.WriteLine("Position invalide.");
                 return false;
             }
-            if (grille[j, k] != 10)
+            if (grille[j, k] != 10) 
             {
                 Console.WriteLine("Position est déjà occupée.");
                 return false;
             }
             grille[j, k] = joueur;
             return true;
-            
-            // remplace par j = "X", k = "O"
         }
 
         // Fonction permettant de vérifier
         // si un joueur à gagner
         public static bool Gagner(int l, int c, int joueur)
         {
-			// A compléter 
 			// Vérifie la ligne si le joueur a complété 3 
             for (int j = 0; j < grille.GetLength(0); j++)
             {
@@ -73,7 +63,9 @@ namespace Morpion
             		return false;		
             }
             // Vérifie le diagonale
-            //for (int i = 0; i < end; i++) {}
+
+
+            // Vérifie le diagonale opposé 
             return true;
         }
  
@@ -90,7 +82,8 @@ namespace Morpion
             int j, k = 0;      // Parcourir le tableau en 2 dimensions
             bool gagner = false; // Permet de vérifier si un joueur à gagné 
             bool bonnePosition = false; // Permet de vérifier si la position souhaité est disponible
-
+            Console.WriteLine("Bienvenue dans la partie Morpion");
+            Console.WriteLine("le joueur 1 joue avec un [X] et le joueur 2 joue avec un [O]");
 	        //--- initialisation de la grille ---
             // On met chaque valeur du tableau à 10
 	        for (j=0; j < grille.GetLength(0); j++)
@@ -98,6 +91,8 @@ namespace Morpion
 			        grille[j,k] = 10;
 					while(!gagner && essais != 9)
 					{
+	                AfficherMorpion();
+
 
 						// A compléter 
 						try
@@ -126,7 +121,7 @@ namespace Morpion
 
             // Fin de la partie
             // A compléter 
-
+// n'oublie pas de commenter les lignes de commande
             Console.ReadKey();
     }
  }
